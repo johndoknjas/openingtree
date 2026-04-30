@@ -56,7 +56,8 @@ export default class MovesTable extends React.Component {
             } else {
                 this.setState({openPerformanceIndex: moveIndex})
             }
-            e.stopPropagation()
+            if (e?.stopPropagation) e.stopPropagation()
+            // todo - stopPropagation is undefined sometimes, if stmt is temp fix
         }
     }
     
